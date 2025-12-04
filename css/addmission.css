@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1ef;
+}
+
+.navbar-main-container {
+    width: 100%;
+    background: black;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.project-name {
+    color: white;
+    font-size: 20px;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 400px;
+}
+
+
+.nav-links-container {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.auth-links-container {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.2s ease;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-main-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+
