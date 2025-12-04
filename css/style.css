@@ -2,13 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f1ef;
+     background-color:#6c88d6;
 }
-
 
 .navbar-main-container {
     width: 100%;
-    background: rgb(43, 83, 95);
+    background:#192546;
     padding: 12px 25px;
     display: flex;
     align-items: center;
@@ -29,7 +28,7 @@ body {
 }
 
 .project-name {
-    color: white;
+    color:white;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -71,8 +70,9 @@ nav {
     justify-content: center;
     text-align: center;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color:#6c88d6;
 }
+
 
 .text-content h1 {
     color: #354350;
@@ -119,18 +119,18 @@ nav {
 }
 
 .card h2 {
-   margin-top: 15px;
-   font-size: 20px;
+    margin-top: 15px;
+    font-size: 20px;
 }
 
 .card p {
     font-size: 14px;
-    padding:0 10px 20px;
+    padding: 0 10px 20px;
 }
 
 .btn {
-  display: inline-block;
-    padding: 10px 18px ;
+    display: inline-block;
+    padding: 10px 18px;
     background-color: rgb(87, 91, 87);
     color: white;
     text-decoration: none;
@@ -147,9 +147,10 @@ nav {
     background-color: rgb(9, 165, 9);
 
 }
-.social-img{
-    height:50px;
-    width:40px;
+
+.social-img {
+    height: 50px;
+    width: 40px;
 }
 
 
@@ -164,29 +165,32 @@ nav {
     color: white;
 }
 
-.footer-section-1{
-   display:flex;
-    flex-direction: column;
-    gap: 20px;
-    width:900px;
-} 
-.footer-section-2{
-    display:flex;
-    flex-direction: column;
-    gap: 20px;
-    width:700px;
-}
-.footer-section-3{
-    display:flex;
-    flex-direction: column;
-    gap: 20px;
-    width:700px;
-}
-.footer-section-4{
+.footer-section-1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width:700px;
+    width: 900px;
+}
+
+.footer-section-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
+}
+
+.footer-section-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
+}
+
+.footer-section-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
 }
 
 .social-icon-container {
@@ -212,12 +216,12 @@ nav {
     margin-top: 5px;
 }
 
-.manu-item {
+.menu-subitem {
     text-decoration: none;
-    color: white;
+    color:white;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
     .navbar-main-container {
         flex-direction: column;

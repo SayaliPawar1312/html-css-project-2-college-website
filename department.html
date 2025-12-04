@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Engineering & Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #0a0e1a;
+            --color-surface: #131825;
+            --color-primary: #3b82f6;
+            --color-accent: #06b6d4;
+            --color-text: #e2e8f0;
+            --color-text-dim: #94a3b8;
+            --color-border: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+       
+        .navbar-main-container {
+    width: 100%;
+    background: rgb(43, 83, 95);
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.project-name {
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 400px;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.auth-links-container {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.2s ease;
+}
+
+.menu-item:hover {
+    color: orange;
+}
+
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .floating-shape {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 60%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -50px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 30px) rotate(240deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--color-text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-surface);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.3s forwards;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Branches Grid */
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .branch-card {
+            background: var(--color-surface);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .branch-card:nth-child(1) { animation-delay: 0.1s; }
+        .branch-card:nth-child(2) { animation-delay: 0.2s; }
+        .branch-card:nth-child(3) { animation-delay: 0.3s; }
+        .branch-card:nth-child(4) { animation-delay: 0.4s; }
+        .branch-card:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .branch-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-primary);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .branch-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .branch-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .branch-card .description {
+            color: var(--color-text-dim);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .branch-card .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.4rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-surface);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeScale 0.5s ease-out forwards;
+        }
+
+        .skill-item:nth-child(1) { animation-delay: 0.1s; }
+        .skill-item:nth-child(2) { animation-delay: 0.15s; }
+        .skill-item:nth-child(3) { animation-delay: 0.2s; }
+        .skill-item:nth-child(4) { animation-delay: 0.25s; }
+        .skill-item:nth-child(5) { animation-delay: 0.3s; }
+        .skill-item:nth-child(6) { animation-delay: 0.35s; }
+        .skill-item:nth-child(7) { animation-delay: 0.4s; }
+        .skill-item:nth-child(8) { animation-delay: 0.45s; }
+
+        @keyframes fadeScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .skill-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Career Section */
+        .career-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .career-category {
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .career-category:nth-child(1) { animation-delay: 0.1s; }
+        .career-category:nth-child(2) { animation-delay: 0.2s; }
+        .career-category:nth-child(3) { animation-delay: 0.3s; }
+        .career-category:nth-child(4) { animation-delay: 0.4s; }
+        .career-category:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .career-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .career-jobs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .job-card {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            border-color: var(--color-accent);
+            transform: translateX(5px);
+        }
+
+        .job-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Hands-On Learning */
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .learning-card {
+            background: var(--color-surface);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .learning-card:nth-child(1) { animation-delay: 0.1s; }
+        .learning-card:nth-child(2) { animation-delay: 0.2s; }
+        .learning-card:nth-child(3) { animation-delay: 0.3s; }
+        .learning-card:nth-child(4) { animation-delay: 0.4s; }
+        .learning-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .learning-card:hover {
+            transform: scale(1.05);
+            border-color: var(--color-primary);
+        }
+
+        .learning-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .learning-content {
+            padding: 1.5rem;
+        }
+
+        .learning-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .learning-card p {
+            color: var(--color-text-dim);
+        }
+
+        /* Future Tech */
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-card {
+            background: linear-gradient(135deg, var(--color-surface), rgba(59, 130, 246, 0.05));
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            animation: fadeScale 0.6s ease-out forwards;
+        }
+
+        .tech-card:nth-child(1) { animation-delay: 0.1s; }
+        .tech-card:nth-child(2) { animation-delay: 0.15s; }
+        .tech-card:nth-child(3) { animation-delay: 0.2s; }
+        .tech-card:nth-child(4) { animation-delay: 0.25s; }
+        .tech-card:nth-child(5) { animation-delay: 0.3s; }
+        .tech-card:nth-child(6) { animation-delay: 0.35s; }
+
+        .tech-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--color-accent);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
+        }
+
+        .tech-card-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .tech-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--color-text-dim);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .branches-grid,
+            .skills-grid,
+            .learning-grid,
+            .future-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll reveal animation trigger */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+     
+    <div class="navbar-main-container">
+
+        <div class="logo-container">
+            <img src="./../html-css-project-2-college-website/images/logo image.jpeg" alt="college website" height="50px" class="main-logo">
+            <b class="project-name">Collage Website</b>
+        </div>
+
+        <nav>
+            <div class="nav-links-container">
+                <a href="./index.html" class="menu-item">Home</a>
+                <a href="./pages/about.html" class="menu-item">About</a>
+                <a href="./pages/department.html" class="menu-item">Department</a>
+                <a href="./pages/contact.html" class="menu-item">Contact</a>
+                <a href="./pages/addmission.html" class="menu-item">Addmission</a>
+            </div>
+
+            <div class="auth-links-container">
+                <a href="./pages/login.html" class="menu-item">Login</a>
+                <a href="./pages/signup.html" class="menu-item">Signup</a>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Department of Engineering & Technology</h1>
+            <p class="hero-subtitle">Empowering Future Engineers</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Department</h2>
+            </div>
+            <div class="about-content">
+                <p>Our Department of Engineering & Technology stands at the forefront of innovation and academic excellence, dedicated to shaping the next generation of engineers and technology leaders.</p>
+                <p>With a vision to advance technological innovation and foster critical thinking, our mission is to provide world-class education that combines theoretical knowledge with practical application, preparing students for the challenges of tomorrow.</p>
+                <p>We offer cutting-edge programs in Electronics, Computer Science, Chemical Engineering, and Artificial Intelligence, each designed to equip students with industry-relevant skills and deep technical knowledge.</p>
+                <p>Our programs are important because they bridge the gap between academic learning and real-world application, ensuring graduates are ready to lead innovation in their respective fields and contribute meaningfully to society's technological advancement.</p>
+                <p>Through state-of-the-art facilities, experienced faculty, and strong industry partnerships, we create an environment where curiosity meets opportunity, and passion transforms into expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Branches Offered</h2>
+                <p>Explore our diverse engineering programs designed for the future</p>
+            </div>
+            <div class="branches-grid">
+                <div class="branch-card">
+                    <div class="branch-icon">⚡</div>
+                    <h3>Electronic & Computer Engineering</h3>
+                    <p class="description">Master the art of electronics, embedded systems, and computer architecture. Learn to design circuits, microprocessors, and cutting-edge hardware solutions.</p>
+                    <p class="description"><strong>Why it matters:</strong> ECE professionals drive innovation in IoT, telecommunications, and smart devices that power our connected world.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">VLSI Design</span>
+                        <span class="tech-tag">Embedded Systems</span>
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">Microcontrollers</span>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <div class="branch-icon">💻</div>
+                    <h3>Information Technology</h3>
+                    <p class="description">Dive into software development, database management, networking, and web technologies. Build scalable applications and manage complex IT infrastructure.</p>
+                    <p class="description"><strong>Why it matters:</strong> IT specialists are the backbone of digital transformation, enabling businesses to innovate and compete globally.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Full-Stack Development</span>
+                        <span class="tech-tag">Cloud Computing</span>
+                        <span class="tech-tag">Database Systems</span>
+                        <span class="tech-tag">DevOps</span>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <div class="branch-icon">🧪</div>
+                    <h3>Chemical Engineering</h3>
+                    <p class="description">Study chemical processes, material science, and industrial production. Design sustainable solutions for energy, pharmaceuticals, and manufacturing.</p>
+                    <p class="description"><strong>Why it matters:</strong> Chemical engineers solve critical challenges in sustainability, healthcare, and resource management for a better planet.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Process Design</span>
+                        <span class="tech-tag">Thermodynamics</span>
+                        <span class="tech-tag">Catalysis</span>
+                        <span class="tech-tag">Bioengineering</span>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <div class="branch-icon">🖥️</div>
+                    <h3>Computer Engineering</h3>
+                    <p class="description">Blend hardware and software expertise. Learn computer architecture, operating systems, and system-level programming to build powerful computing systems.</p>
+                    <p class="description"><strong>Why it matters:</strong> Computer engineers create the foundation for all modern technology, from smartphones to supercomputers.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">System Architecture</span>
+                        <span class="tech-tag">Embedded Programming</span>
+                        <span class="tech-tag">Computer Networks</span>
+                        <span class="tech-tag">OS Development</span>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <div class="branch-icon">🤖</div>
+                    <h3>Artificial Intelligence & Data Science</h3>
+                    <p class="description">Explore machine learning, deep learning, big data analytics, and intelligent systems. Build AI models that learn, predict, and make decisions.</p>
+                    <p class="description"><strong>Why it matters:</strong> AI & DS professionals are revolutionizing every industry with data-driven insights and intelligent automation.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">Big Data</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Skills You Learn</h2>
+                <p>Comprehensive skill development for modern engineers</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">👨‍💻</div>
+                    <h3>Programming & Coding</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔌</div>
+                    <h3>Circuit Design</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Software Tools</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🧩</div>
+                    <h3>Problem Solving</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Teamwork</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🧠</div>
+                    <h3>AI Fundamentals</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💡</div>
+                    <h3>Innovation</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔬</div>
+                    <h3>Research</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section id="careers">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Career Opportunities</h2>
+                <p>Endless possibilities across industries</p>
+            </div>
+            <div class="career-categories">
+                <div class="career-category">
+                    <h3>Information Technology Careers</h3>
+                    <div class="career-jobs">
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Software Developer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Full-Stack Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>DevOps Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Cloud Architect</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-category">
+                    <h3>Electronics & Computer Engineering Careers</h3>
+                    <div class="career-jobs">
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>VLSI Design Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Embedded Systems Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Hardware Designer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>IoT Specialist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-category">
+                    <h3>Chemical Engineering Careers</h3>
+                    <div class="career-jobs">
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Process Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Pharmaceutical Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Environmental Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>R&D Scientist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-category">
+                    <h3>Computer Engineering Careers</h3>
+                    <div class="career-jobs">
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Systems Architect</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Firmware Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Network Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Cybersecurity Analyst</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-category">
+                    <h3>AI & Data Science Careers</h3>
+                    <div class="career-jobs">
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Machine Learning Engineer</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>Data Scientist</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>AI Research Scientist</span>
+                        </div>
+                        <div class="job-card">
+                            <div class="job-icon">💼</div>
+                            <span>NLP Specialist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hands-On Learning -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Hands-On Learning</h2>
+                <p>Experience-driven education for real-world readiness</p>
+            </div>
+            <div class="learning-grid">
+                <div class="learning-card">
+                    <div class="learning-image">🔬</div>
+                    <div class="learning-content">
+                        <h3>Advanced Laboratories</h3>
+                        <p>State-of-the-art labs equipped with industry-standard tools and equipment</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-image">🎓</div>
+                    <div class="learning-content">
+                        <h3>Workshops & Seminars</h3>
+                        <p>Regular sessions with industry experts and academic leaders</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-image">💡</div>
+                    <div class="learning-content">
+                        <h3>Mini Projects</h3>
+                        <p>Semester-long projects to apply concepts in practical scenarios</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-image">🚀</div>
+                    <div class="learning-content">
+                        <h3>Final Year Projects</h3>
+                        <p>Capstone projects addressing real-world engineering challenges</p>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="learning-image">🏭</div>
+                    <div class="learning-content">
+                        <h3>Industrial Visits</h3>
+                        <p>Exposure to industry practices through plant tours and internships</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future-Ready Learning -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Future-Ready Learning</h2>
+                <p>Preparing you for tomorrow's technologies today</p>
+            </div>
+            <div class="future-grid">
+                <div class="tech-card">
+                    <div class="tech-card-icon">🤖</div>
+                    <h3>Artificial Intelligence</h3>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🧠</div>
+                    <h3>Machine Learning</h3>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🌐</div>
+                    <h3>Internet of Things</h3>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🦾</div>
+                    <h3>Robotics</h3>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">☁️</div>
+                    <h3>Cloud Computing</h3>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-icon">🔒</div>
+                    <h3>Cybersecurity</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Department of Engineering & Technology. Building Tomorrow's Engineers.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
