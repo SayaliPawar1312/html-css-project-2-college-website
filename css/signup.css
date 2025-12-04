@@ -352,6 +352,7 @@ form input {
         width: 95%;
         height: auto;
     }
+
     .avatar {
         width: 80px;
         height: 80px;
@@ -375,15 +376,17 @@ form input {
     /* FIXED selector */
     .nav-links-container,
     .auth-links-container {
-    gap: 10px;
-    margin-left: auto;
-    display: flex;
+        gap: 10px;
+        margin-left: auto;
+        display: flex;
 
-}
+    }
+
     .icon {
         width: 12px;
         height: 12px;
     }
+
     .avatar {
         width: 60px;
         height: 60px;
